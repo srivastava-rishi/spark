@@ -10,13 +10,35 @@
 
         <include
             android:id="@+id/iLoader"
+            android:visibility="visible"
             layout="@layout/view_loader"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvProduct"
+            android:layout_below="@id/search_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:overScrollMode="never"/>
+
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/search_background"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:drawableTint="@color/chineseBlack2"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="search"
+            android:inputType="textPersonName"
+            android:textColor="@color/content_text_color"
+            android:textColorHint="@color/chineseBlack2"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_12sdp" />
 
     </RelativeLayout>
 </layout>

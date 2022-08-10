@@ -30,15 +30,8 @@ class MainActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         //
-        initTheme()
         initRecyclerView()
         initObservers()
-    }
-
-
-    private fun initTheme() {
-        window.statusBarColor = resources.getColor(R.color.ghost_white)
-        window.navigationBarColor = resources.getColor(R.color.lightBlack)
     }
 
     private fun initRecyclerView() {
@@ -49,7 +42,6 @@ class MainActivity : BaseActivity() {
         binding.rvProduct.adapter = mainAdapter
     }
 
-
     private fun initObservers(){
 
         viewModel.productData.observe(this) {
@@ -57,9 +49,6 @@ class MainActivity : BaseActivity() {
             if (it != null) {
                 val list: MutableList<ProductsData> = mutableListOf()
                 list.add(it)
-//                Log.d(logTag, "onCreate: data$list")
-                Log.d(logTag, "onCreate: data${list.size}")
-                Log.d(logTag, "onCreate: data${list[0].products.size}")
                 // submit list
                 mainAdapter.submitList(list)
             }

@@ -29,6 +29,7 @@
     <color name="White">#ffffff</color>
     <color name="Black">#000000</color>
     <color name="Grey_6_Dark">#35383f</color>
+    <color name="light_status_bar">#cccccc</color>
 
     <color name="d_d1_dark">#2e323d</color>
 
@@ -59,5 +60,11 @@
     //
     <color name="cream">#EAEAEA</color>
     <color name="lightest">#AFAFAF</color>
+
+    //
+    <color name="card_bg_color">#f6f6f6</color>
+    <color name="card_bg_dark_color">#0e0e0e</color>
+    <color name="title_text_color">#258bd6</color>
+    <color name="content_text_color">#999da4</color>
 
 </resources>
