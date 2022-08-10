@@ -45,7 +45,7 @@
                     android:layout_height="match_parent">
 
                     <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/rivBeerImage"
+                        android:id="@+id/rivProductImage"
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_75sdp"
                         android:layout_marginStart="1.5dp"

@@ -8,13 +8,15 @@
         android:background="@color/white2"
         tools:context=".main.MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/iLoader"
+            layout="@layout/view_loader"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProduct"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Main Activity"
-            android:textSize="@dimen/_16ssp"
-            android:textColor="@color/black"
-            android:layout_centerInParent="true"/>
+            android:overScrollMode="never"/>
 
     </RelativeLayout>
 </layout>

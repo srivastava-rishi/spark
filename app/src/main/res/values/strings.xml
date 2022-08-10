@@ -5,7 +5,7 @@
     <string name="splash_text">Splash Activity</string>
 
     //product item layout
-    <string name="productTitle">Title:</string>
+    <string name="productTitle">Name:</string>
     <string name="productDescriptionTitle">Description:</string>
     <string name="categoryTitle">Category:</string>
     <string name="ratingTitle">Rating:</string>
