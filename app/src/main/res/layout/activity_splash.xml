@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:text="@string/splash_text"
             android:textSize="@dimen/_18ssp"
+            android:textColor="@color/black"
             android:layout_centerInParent="true"
             />
 

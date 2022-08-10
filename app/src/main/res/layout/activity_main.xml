@@ -13,6 +13,7 @@
             android:layout_height="wrap_content"
             android:text="Main Activity"
             android:textSize="@dimen/_16ssp"
+            android:textColor="@color/black"
             android:layout_centerInParent="true"/>
 
     </RelativeLayout>

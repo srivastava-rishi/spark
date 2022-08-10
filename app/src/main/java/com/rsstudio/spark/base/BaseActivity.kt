@@ -15,7 +15,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_base)
     }
 
     override fun attachBaseContext(context: Context) {
