@@ -20,7 +20,7 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
         //
-        initTheme()
+//        initTheme()
         gotoMainActivity()
     }
 

@@ -2,7 +2,10 @@ package com.rsstudio.spark.main
 
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,7 +35,25 @@ class MainActivity : BaseActivity() {
         //
         initRecyclerView()
         initObservers()
+
+
+        binding.searchInput.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                Log.d(logTag, "onTextChanged: $s")
+                mainAdapter.filter.filter(s)
+            }
+        })
     }
+
+
+
+
 
     private fun initRecyclerView() {
         val llm = LinearLayoutManager(this)
@@ -42,7 +63,7 @@ class MainActivity : BaseActivity() {
         binding.rvProduct.adapter = mainAdapter
     }
 
-    private fun initObservers(){
+    private fun initObservers() {
 
         viewModel.productData.observe(this) {
 
@@ -51,10 +72,10 @@ class MainActivity : BaseActivity() {
                 list.add(it)
                 // submit list
                 mainAdapter.submitList(list)
+                binding.iLoader.visibility = View.GONE
             }
         }
 
     }
-
 
 }

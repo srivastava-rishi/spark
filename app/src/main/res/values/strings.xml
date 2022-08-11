@@ -2,7 +2,7 @@
     <string name="app_name">Spark</string>
 
     //
-    <string name="splash_text">Splash Activity</string>
+    <string name="splash_text">SparkCog</string>
 
     //product item layout
     <string name="productTitle">Name:</string>
