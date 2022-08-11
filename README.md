@@ -1,5 +1,5 @@
 # Spark
-It is mobile application that loads a API.
+It is mobile application that loads an API.
 
 # Current Features
 * It follow MVVM Design Pattern.
