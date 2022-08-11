@@ -4,6 +4,7 @@ It is mobile application that loads an API.
 # Current Features
 * It follow MVVM Design Pattern.
 * You can search through the list by product name.
+* It also contains some cool animation.
 
 # Improvement Areas
 * I haven't able to make the app run offline.
