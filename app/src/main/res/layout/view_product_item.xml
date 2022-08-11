@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white2">
+    android:background="@color/white">
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvContainer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_height="@dimen/_110sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginStart="@dimen/_8sdp"
@@ -25,13 +25,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/ivSaveInfo"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_bookmark_check"
+                android:visibility="visible" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvBeerImage"
+                android:layout_below="@id/ivSaveInfo"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_75sdp"
                 android:layout_marginStart="@dimen/_4sdp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_4sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
                 android:backgroundTint="@color/lightSlateColor"
@@ -64,10 +76,10 @@
 
             <LinearLayout
                 android:id="@+id/llBearInfo"
+                android:layout_below="@+id/ivSaveInfo"
                 android:layout_width="match_parent"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/cvBeerImage"
                 android:orientation="vertical">
@@ -212,11 +224,7 @@
 
                 </LinearLayout>
 
-
-
-
             </LinearLayout>
-
 
         </RelativeLayout>
 

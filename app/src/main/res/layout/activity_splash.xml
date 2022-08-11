@@ -7,16 +7,14 @@
         android:id="@+id/rlRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white2"
+        android:background="@color/white"
         tools:context=".splash.SplashActivity">
 
-        <TextView
+        <ImageView
             android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/splash_text"
-            android:textSize="@dimen/_18ssp"
-            android:textColor="@color/black"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/ic_undraw_into_the_night_vumi"
             android:layout_centerInParent="true"
             />
 

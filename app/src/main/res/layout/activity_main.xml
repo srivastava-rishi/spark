@@ -5,7 +5,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white2"
+        android:background="@color/white"
         tools:context=".main.MainActivity">
 
         <include
@@ -13,35 +13,22 @@
             android:visibility="visible"
             layout="@layout/view_loader"/>
 
+        <include
+            android:id="@+id/iAppBar"
+            layout="@layout/view_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:layout_alignParentTop="true" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvProduct"
-            android:layout_below="@id/search_input"
+            android:layout_below="@id/iAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:overScrollMode="never"/>
 
-        <EditText
-            android:id="@+id/search_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            fontPath="fonts/Montserrat-Regular.ttf"
-            tools:ignore="MissingPrefix"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginBottom="@dimen/_6sdp"
-            android:background="@drawable/search_background"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:drawablePadding="8dp"
-            android:drawableTint="@color/chineseBlack2"
-            android:ems="10"
-            android:hint="search by name"
-            android:inputType="textPersonName"
-            android:shadowColor="@color/ghost_white"
-            android:textColor="@color/chineseBlack2"
-            android:textColorHint="@color/chineseBlack2" />
+
 
     </RelativeLayout>
 </layout>

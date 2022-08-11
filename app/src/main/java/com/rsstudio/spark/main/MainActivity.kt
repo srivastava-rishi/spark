@@ -35,9 +35,13 @@ class MainActivity : BaseActivity() {
         //
         initRecyclerView()
         initObservers()
+        initView()
 
+    }
 
-        binding.searchInput.addTextChangedListener(object : TextWatcher {
+    private fun initView(){
+
+        binding.iAppBar.searchInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
 
@@ -49,11 +53,8 @@ class MainActivity : BaseActivity() {
                 mainAdapter.filter.filter(s)
             }
         })
+
     }
-
-
-
-
 
     private fun initRecyclerView() {
         val llm = LinearLayoutManager(this)
@@ -72,6 +73,7 @@ class MainActivity : BaseActivity() {
                 list.add(it)
                 // submit list
                 mainAdapter.submitList(list)
+                binding.iAppBar.abRoot.visibility = View.VISIBLE
                 binding.iLoader.visibility = View.GONE
             }
         }

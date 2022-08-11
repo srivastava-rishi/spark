@@ -30,6 +30,9 @@
     <color name="Black">#000000</color>
     <color name="Grey_6_Dark">#35383f</color>
     <color name="light_status_bar">#cccccc</color>
+    <color name="Dark_Yellow">#f7971e</color>
+
+    <color name="Grey_5_Light">#575b5e</color>
 
     <color name="d_d1_dark">#2e323d</color>
 
