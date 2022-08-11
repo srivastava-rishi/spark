@@ -107,7 +107,7 @@ class MainAdapter(
                     var filteredList:  MutableList<Info> = mutableListOf()
 
                     list[0].products.filter {
-                        (it.title.lowercase().startsWith(constraint.toString().lowercase().trim()))
+                        (it.title.lowercase().contains(constraint.toString().lowercase().trim()))
                     }.forEach{ filteredList.add(it)}
                     productFilteredList = filteredList
                 }

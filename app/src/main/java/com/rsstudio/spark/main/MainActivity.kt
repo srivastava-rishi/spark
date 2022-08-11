@@ -1,6 +1,7 @@
 package com.rsstudio.spark.main
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,6 +15,7 @@ import com.rsstudio.spark.adapter.MainAdapter
 import com.rsstudio.spark.base.BaseActivity
 import com.rsstudio.spark.databinding.ActivityMainBinding
 import com.rsstudio.spark.model.ProductsData
+import com.rsstudio.spark.save.SaveActivity
 import com.rsstudio.spark.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,6 +38,12 @@ class MainActivity : BaseActivity() {
         initRecyclerView()
         initObservers()
         initView()
+
+        binding.iAppBar.ivMore.setOnClickListener{
+            val intent = Intent(this@MainActivity, SaveActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.anim_enter, R.anim.anim_exit);
+        }
 
     }
 
