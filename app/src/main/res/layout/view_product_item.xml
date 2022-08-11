@@ -29,11 +29,11 @@
                 android:id="@+id/ivSaveInfo"
                 android:layout_width="@dimen/_16sdp"
                 android:layout_height="@dimen/_16sdp"
-                android:layout_gravity="center_vertical"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:src="@drawable/ic_bookmark_check"
                 android:visibility="visible" />
 

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +22,8 @@ import com.rsstudio.spark.model.ProductsData
 
 
 class MainAdapter(
-    private var context: Context
+    private var context: Context,
+    private var listener: MainAdapterListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() , Filterable {
 
     private var list: MutableList<ProductsData> = mutableListOf()
@@ -38,6 +40,7 @@ class MainAdapter(
         var tvRating: TextView = view.findViewById(R.id.tvRating)
         var rivBeerImage: RoundedImageView = view.findViewById(R.id.rivProductImage)
         var cvContainer: CardView = view.findViewById(R.id.cvContainer)
+        var ivSaveInfo: ImageView = view.findViewById(R.id.ivSaveInfo)
 
         @SuppressLint("SetTextI18n")
         fun onBind(item: Info) {
@@ -57,6 +60,10 @@ class MainAdapter(
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()
                 .into(rivBeerImage)
+
+            ivSaveInfo.setOnClickListener {
+                listener.onSaveProductInfo(item,ivSaveInfo)
+            }
 
         }
 
@@ -123,6 +130,12 @@ class MainAdapter(
 
             }
         }
+    }
+
+    interface MainAdapterListener {
+
+        fun onSaveProductInfo(item: Info, image: ImageView)
+
     }
 }
 

@@ -7,20 +7,26 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.makeramen.roundedimageview.RoundedImageView
 import com.rsstudio.spark.R
 import com.rsstudio.spark.adapter.MainAdapter
 import com.rsstudio.spark.base.BaseActivity
 import com.rsstudio.spark.databinding.ActivityMainBinding
+import com.rsstudio.spark.model.Info
 import com.rsstudio.spark.model.ProductsData
 import com.rsstudio.spark.save.SaveActivity
 import com.rsstudio.spark.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity() , MainAdapter.MainAdapterListener{
 
     var logTag = "@MainActivity"
 
@@ -68,7 +74,7 @@ class MainActivity : BaseActivity() {
         val llm = LinearLayoutManager(this)
         binding.rvProduct.setHasFixedSize(true)
         binding.rvProduct.layoutManager = llm
-        mainAdapter = MainAdapter(this)
+        mainAdapter = MainAdapter(this,this)
         binding.rvProduct.adapter = mainAdapter
     }
 
@@ -86,6 +92,12 @@ class MainActivity : BaseActivity() {
             }
         }
 
+
     }
+
+    override fun onSaveProductInfo(item: Info, image: ImageView) {
+        TODO("Not yet implemented")
+    }
+
 
 }
