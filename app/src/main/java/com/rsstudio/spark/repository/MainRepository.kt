@@ -17,6 +17,7 @@ class MainRepository
 @Inject
 constructor(
     private val api: ApiService,
+    private val db: SavedProductDatabase
     ) {
 
     suspend fun getProductInfo() : Response<ProductsData> {
@@ -24,51 +25,53 @@ constructor(
        return  api.getProductsData()
     }
 
-//    private val savedProductDao = db.productDao()
+    private val savedDao = db.productDao()
 
-//    fun getProductData(
-//        age: Int,
-//        forceRefresh: Boolean,
-//        onFetchSuccess: () -> Unit,
-//        onFetchFailed: (Throwable) -> Unit
-//    ) : Flow<Resource<ProductsData>> = networkBoundResource(
-//
-//        query = {
-//            savedProductDao.getAllSavedProductData()
-//        },
-//
-//        fetch = {
-////                api.getProductsData()
-//
-//        },
-//
-//        saveFetchResult = {
-////            when(it){
-////                is Resource.Success<*> -> {
-////                    db.withTransaction {
-//////                        homeDao.deleteHomeData()
-//////                        homeDao.insertHomeData(it.value)
-////                    }
-////                }
-////                is Resource.Failure ->{
-////
-////                }
-////                else ->{
-////
-////                }
-////            }
-//        },
-//        shouldFetch = {
-//            if(forceRefresh){
-//                true
-//            }else{
-//                true
-//            }
-//        },
-//        onFetchSuccess = onFetchSuccess,
-//        onFetchFailed = {
-//            onFetchFailed(it)
-//        }
-//    )
+    fun getProductData(
+        age: Int,
+        forceRefresh: Boolean,
+        onFetchSuccess: () -> Unit,
+        onFetchFailed: (Throwable) -> Unit
+    ) : Flow<Resource<ProductsData>> = networkBoundResource(
+
+        query = {
+            savedDao.getProductData()
+        },
+
+        fetch = {
+            api.getProductsData()
+
+        },
+
+        saveFetchResult = {
+            when(it){
+                 it.isSuccessful-> {
+                    db.withTransaction {
+//                        homeDao.deleteHomeData()
+                        savedDao.insertProductData(it.value)
+
+                    }
+                }
+                is Resource.Failure ->{
+
+
+                }
+                else ->{
+
+                }
+            }
+        },
+        shouldFetch = {
+            if(forceRefresh){
+                true
+            }else{
+                true
+            }
+        },
+        onFetchSuccess = onFetchSuccess,
+        onFetchFailed = {
+            onFetchFailed(it)
+        }
+    )
 
 }
